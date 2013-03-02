@@ -1,0 +1,22 @@
+
+IfThen(InventoryContainsItem("MysticalKey"));
+    CreateActor("Locke", "Characters/PlayableCharacters/Locke", 158, 295);
+
+Loop(10);
+{
+    CreateActor("Locke", "Characters/PlayableCharacters/Locke", 158, 295);
+    GiveExperience("Locke", 570);
+}
+
+IfThen(InventoryContainsItem("MysticalKey"));
+{
+    CreateActor("Locke", "Characters/PlayableCharacters/Locke", 158, 295);
+    LearnSkill("Locke", "LockPick");
+	Dialog("Dialog/1");
+}
+
+
+LearnSkill("Onyxia", "DeepBreath");
+LearnSkill("Locke", "Steal");
+UnLearnSkill("Onyxia", "DeepBreath");
+SetLevel("Onyxia", 500);
